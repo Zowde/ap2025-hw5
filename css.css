@@ -1,0 +1,9 @@
+div.hidden {
+    display: none;
+}
+a.valid {
+    display: block;   
+}
+a.malicious {
+    display: block;
+}

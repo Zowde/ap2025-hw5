@@ -29,10 +29,112 @@
       </div>
     </div>
     <div id="q6">
-        
+
     </div>
     <div id="q7">
-        
+        <div class="button" id="div_btn"><label>Click Me</label></div>
+    </div>
+    <div id="q8">
+        <form id="unit_converter">
+          <table>
+            <thead>
+              <tr>
+                <th  colspan="3">Unit Converter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Convert from 
+                </td>
+                <td>
+                  <input type="text" name="convertion_input" id="convertion_input" />
+                </td>
+                <td>
+                  <select name="convert_from_unit" id="convert_from_unit">
+                    <option value="cm">cm</option>
+                    <option value="meter">meter</option>
+                    <option value="inch">inch</option>
+                    <option value="foot">foot</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Convert to 
+                </td>
+                <td>
+                  <input type="text" name="convertion_output" id="convertion_output">
+                </td>
+                <td>
+                  <select name="convert_to_unit" id="convert_to_unit">
+                    <option value="cm">cm</option>
+                    <option value="meter">meter</option>
+                    <option value="inch">inch</option>
+                    <option value="foot">foot</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td style="align-items: center;"><input type="button" id="convert_btn" value="convert" onclick="solution_js_unit_converter()"></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </form>
+    </div>
+    <div id="q9">
+        <div id="green_paragraph">
+          
+          <section class="green_paragraph">
+            <h6>Green paragraphs</h6>
+            <p>This text should be green</p>
+            <p class="green_paragraph">This should also be green</p>
+            <label>This text should be black</label>
+          </section>
+          <p>This text should also be black</p>
+          
+        </div>
+        <div id="blue_background">
+          <section class="green_paragraph">
+            <p blue>This text should be black with blue background</p>
+            <p>This text should have regular background</p>
+          </section>
+        </div>
+        <div id="clear_from_color">
+          <section class="green_paragraph">
+            <p blue>This text should be black with regular background</p>
+          </section>
+        </div>
+    </div>
+    <div id="q10">
+        <div class="redcontent" id="q10-div1">
+          <p>This text should be red.</p>
+          <p class="text_after">There should be text after this. </p>
+        </div>
+        <div class="redcontent" id="q10-div2">
+          <pre class="text_after">This text should be black</pre>
+          <p>This text should remain black</p>
+        </div>
+        <div class="reference_div" id="q10-div3">
+          <p class="text_after">This text should remain black</p>
+        </div>
+    </div>
+    <div id="q11">
+        <div id="css-flex-1" class="div-grid">
+          <div id="q11-div-1" style="background-color: red;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-2" style="background-color: green;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-3" style="background-color: black;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-4" style="background-color: blue;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-5" style="background-color: yellow;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-6" style="background-color: gray;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-7" style="background-color: purple;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-8" style="background-color: orange;padding: 30px;border: 1px solid black;"></div>
+          <div id="q11-div-9" style="background-color: white;padding: 30px;border: 1px solid black;"></div>
+        </div>
     </div>
     <script src="./js.js"></script>
   </body>

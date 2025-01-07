@@ -5,6 +5,7 @@
     <title>My amazing website</title>
     <link rel="stylesheet" href="./css.css">
     <script src="./logic.js" defer></script>
+     
   </head>
   <body>
     <h1>Q1</h1>
@@ -53,6 +54,44 @@
 
     <h1>Q3</h1>
     <div id="q3">
+      <table>
+        <thead>
+        <tr>
+        <th></th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>0</th>
+            <td rowspan="4">0</td>    <!-- spaning on row -->
+
+            <td colspan="3" >0</td> <!-- spaning on col-->
+          </tr> 
+          <tr>
+            <th>1</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>3</td>
+            <td>6</td>
+            <td>9</td>
+          </tr>
+        </tbody>
+        <tfoot><tr><td colspan="5"><p><strong>multiplication table</strong></P></td></tr></tfoot>
+      </table>
     </div>
     <hr>
 

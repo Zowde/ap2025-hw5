@@ -19,3 +19,17 @@ div.button {
 div.div-grid {
     width: 300px;
 }
+table {
+    width: 30%;
+    border-collapse: collapse;
+  }
+  th {
+    padding: 10px;
+    border: 1px solid;
+    text-align: center;
+  }
+  td{
+    text-align: center;
+    border: 1px solid;
+
+  }

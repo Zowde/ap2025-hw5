@@ -36,18 +36,23 @@ function validation_fields(event) {
     const nothashtaganddots = /^(?!.*#)(?!.*[.]{2}).*$/;
     const regex = /^[^.-][A-Za-z0-9%&+*#$^!()_{}|?><=~;,.]*@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/;
     const email = document.getElementById("email").value;
-    if(!nothashtaganddots.test(email) || !regex.test(email) || !usernameRegex.test(username) || !passwordRegex.test(password))
-    {
-        alert("The form is invalid");
-    }
-    else
-    {
-        alert("The form is valid");
+   if(document.getElementById("age").value >= 10 && document.getElementById("age").value <=120)
+   {
+    alert("The form is invalid");
+   }
+   if(!usernameRegex.test(username))
+   {
+    alert("The form is invalid");
 
-    }
+   }
+   if(!passwordRegex.test(password)){
+    alert("The form is invalid");
 
+   }
+   if(!nothashtaganddots.test(email) || !regex.test(email)){
+    alert("The form is invalid");
 
-
+   }
 
 }
 // Initialize the event listener when the page loads

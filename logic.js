@@ -16,7 +16,7 @@ function solution_js_unit_converter(){
 }
 // Add the event listener on form submission
 function listen() {
-    document.getElementById("myform").addEventListener("button", validation_fields);
+    document.getElementById("myform").addEventListener("submit", validation_fields);
 }
 
 // Validation function for the form fields
@@ -40,16 +40,16 @@ function validation_fields(event) {
    {
     alert("The form is invalid");
    }
-   if(!usernameRegex.test(username))
+   else if(!usernameRegex.test(username))
    {
     alert("The form is invalid");
 
    }
-   if(!passwordRegex.test(password)){
+   else if(!passwordRegex.test(password)){
     alert("The form is invalid");
 
    }
-   if(!nothashtaganddots.test(email) || !regex.test(email)){
+   else if(!nothashtaganddots.test(email) || !regex.test(email)){
     alert("The form is invalid");
 
    }

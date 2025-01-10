@@ -16,7 +16,7 @@ function solution_js_unit_converter(){
 }
 // Add the event listener on form submission
 function listen() {
-    document.getElementById("myform").addEventListener("submit", validation_fields);
+    document.getElementById("myform").addEventListener("click", validation_fields);
 }
 
 // Validation function for the form fields

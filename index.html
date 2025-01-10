@@ -98,6 +98,32 @@
 
     <h1>Q4</h1>
     <div id="q4">
+      <form id = "myform">
+        <label for="fname">User Name:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="age">age</label><br>
+        <input type="number" id="age" name="age"><br>
+
+        <input type="checkbox" id="netanya" name="cities" value="netanye">
+        <label for="netanya"> netanye</label><br>
+        <input type="checkbox" id="haifa" name="cities" value="haifa">
+        <label for="haifa"> haifa</label><br>
+        <input type="checkbox" id="tel aviv" name="cities" value="tel aviv">
+        <label for="tel aviv"> tel aviv</label><br>
+         
+        <label for="satisfaction">satisfaction</label>
+       <input type="range" id="satisfaction" name="satisfaction" min="1" max="5" value="3"><br>
+      
+       <label for="favcolor">Select your favorite color:</label>
+       <input type="color" id = "fav_color"><br>
+
+
+        <input onclick="validation_fields" type="submit" value="Submit">
+      </form>
     </div>
     <hr>
 

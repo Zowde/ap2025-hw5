@@ -17,6 +17,7 @@ function solution_js_unit_converter(){
 // Add the event listener on form submission
 // Add event listener using the listen function
 function listen() {
+       /*
     document.getElementById("submit").addEventListener("click", function(event) {
         // Prevent form submission until validation is done
         event.preventDefault();
@@ -27,49 +28,86 @@ function listen() {
             document.getElementById("myform").submit();
         }
     });
+    */
 }
+
 
 // Validation function for the form fields
 function validation_fields() {
-    // Access values from the form fields
+    
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
     const age = document.getElementById('age').value;
-    
     // Define validation rules (regular expressions)
     const usernameRegex = /^[a-zA-Z0-9-]{4,}$/;
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*-_()]).+$/;
-    const emailRegex = /^[^.-][A-Za-z0-9%&+*#$^!()_{}|?><=~;,.]*@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/;
-    
     // Validate username
     if (!usernameRegex.test(username)) {
-        alert("Invalid username! Only letters, numbers, and dashes are allowed, and it must be at least 4 characters long.");
-        return false;
+        alert("The form is invalid");
+        return;
     }
 
     // Validate password
-    if (!passwordRegex.test(password)) {
-        alert("Invalid password! It must contain at least one letter, one number, and one special character.");
-        return false;
+   if (!passwordRegex.test(password)) {
+        alert("The form is invalid");
+        return;
     }
 
     // Validate email
-    if (!emailRegex.test(email)) {
-        alert("Invalid email! Please ensure the email is in the correct format.");
-        return false;
+    const atCount = (email.match(/@/g) || []).length;
+    if (atCount !== 1) {  
+        alert("The form is invalid");
+        return;
+     }
+    
+
+    const [userPart, domainPart] = email.split("@");
+
+    // Rule 2: User part and domain part must exist
+    if (!userPart || !domainPart) {
+        alert("The form is invalid");
+        return ;
     }
+    // Rule 3: Does not contain #
+    if (email.includes("#")){ 
+        alert("The form is invalid");
+        return;
+    } 
+
+    // Rule 4: Does not contain ..
+    if (email.includes("..")) {
+        alert("The form is invalid");
+        return;}
+
+    // Rule 5: User part does not end with . or -
+    if (userPart.endsWith(".") || userPart.endsWith("-")) {
+        alert("The form is invalid");
+        return ;}
+
+    // Rule 6: User part does not start with . or -
+    if (userPart.startsWith(".") || userPart.startsWith("-")){
+        alert("The form is invalid");
+        return};
+
+    // Rule 7: Valid domain name
+    const domainParts = domainPart.split(".");
+    if (domainParts.length < 2){ 
+        alert("The form is invalid");
+        return;} // At least one subdomain
+    if (domainParts.some(part => part === "")) {
+        alert("The form is invalid");
+        return ;} // No empty parts
+    if (domainParts[domainParts.length - 1].length < 2){ 
+        alert("The form is invalid");
+        return ;} // Root domain at least 2 chars
 
     // Validate age
-    if (age < 10 || age > 120) {
-        alert("Invalid age! Age must be between 10 and 120.");
-        return false;
+   else if (age < 10 || age > 120) {
+        alert("The form is invalid");
+        return ;
     }
+      // If all validations pass, return true to submit the form
 
-    // If all validations pass, return true to submit the form
-    return true;
+        alert("The form is valid")   
 }
-
-// Initialize the event listener when the page loads
-window.onload = listen;
-

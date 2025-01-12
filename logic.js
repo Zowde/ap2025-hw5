@@ -27,8 +27,14 @@ function solution_js_dynamic_elements(){
     temp.append(newDiv)
 }
 
-function solution_js_event_listeners(){
+function solution_js_event_listeners() {
+    document.getElementById('div_btn').addEventListener("click", function() {
+        alert("click");
+    });
 
+    document.body.addEventListener('keydown', function(event) {
+        console.log(`The key '${event.key}' was pressed`);
+    });
 }
 
 function solution_js_unit_converter(){

@@ -4,7 +4,24 @@ function solution_js_query(){
 }
 
 function solution_js_dynamic_elements(){
+    const temp = document.querySelector("div#q6");
 
+    // The strings you want to use for the content of the elements
+    const h2_el = "That is <h2> I added using JS";
+    const p2_2l = "That's a <p> element I added using JS";
+    
+    // Create new h2 and p elements
+    const el1 = document.createElement('h2');
+    const pel1 = document.createElement('p');
+    
+    // Set the text content of the elements
+    el1.textContent = h2_el;
+    pel1.textContent = p2_2l;
+    
+    // Append the newly created elements to the div
+    temp.appendChild(el1);
+    temp.appendChild(pel1);
+    
 }
 
 function solution_js_event_listeners(){

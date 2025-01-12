@@ -4,6 +4,9 @@ function solution_js_query(){
 }
 
 function solution_js_dynamic_elements(){
+
+    const newDiv = document.createElement('div');
+
     const temp = document.querySelector("div#q6");
 
     // The strings you want to use for the content of the elements
@@ -19,9 +22,9 @@ function solution_js_dynamic_elements(){
     pel1.textContent = p2_2l;
     
     // Append the newly created elements to the div
-    temp.appendChild(el1);
-    temp.appendChild(pel1);
-    
+    newDiv.appendChild(el1);
+    newDiv.appendChild(pel1);
+    temp.append(newDiv)
 }
 
 function solution_js_event_listeners(){

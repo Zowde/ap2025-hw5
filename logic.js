@@ -135,3 +135,25 @@ function validation_fields() {
       // If all validations pass
         alert("The form is valid")   
 }
+
+function solution_js_query(){
+
+
+    // Select all <a> elements with the class 'malicious' inside a <div> with the ID 'q5'
+const arraymeli = document.querySelectorAll('div#q5 a.malicious');
+
+// Loop through each selected <a> element
+for (let index = 0; index < arraymeli.length; index++) {
+    // Set the display style to 'none' for each element
+    arraymeli[index].style.display = 'none';
+}
+
+// Select the first <div> element with the class 'hidden'
+const elem = document.querySelector('div.hidden');
+
+// Set the display style to 'block' to make it visible
+if (elem) {
+    elem.style.display = 'block';
+}
+
+}

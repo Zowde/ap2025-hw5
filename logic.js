@@ -36,7 +36,6 @@ function listen() {
 function validation_fields() {
     
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
     const age = document.getElementById('age').value;
     // Define validation rules (regular expressions)
@@ -47,12 +46,42 @@ function validation_fields() {
         alert("The form is invalid");
         return;
     }
+  // Validate age
+       if (age < 10 || age > 120) {
+       alert("The form is invalid");
+        return ;
+        }
+    // Validate password   
+        const password = document.getElementById('password').value;
+        const minLength = 8;
+        const specialCharacters = /[!@#$%^&*\-_()]/;
+        const containsLetter = /[A-Za-z]/;
+        const containsNumber = /\d/;
+        
 
-    // Validate password
-   if (!passwordRegex.test(password) || password.length < 8) {
-        alert("The form is invalid");
-        return;
-    }
+        // Check password length
+        if (password.length < minLength) {
+            alert("The form is invalid");
+            return ;
+        }
+
+        // Check for at least one letter
+        if (!containsLetter.test(password)) {
+            alert("The form is invalid");
+            return ;
+        }
+
+        // Check for at least one number
+        if (!containsNumber.test(password)) {
+            alert("The form is invalid");
+            return ;
+        }
+
+        // Check for at least one special character
+        if (!specialCharacters.test(password)) {
+            alert("The form is invalid");
+            return ;
+        }
 
     // Validate email
     const atCount = (email.match(/@/g) || []).length;
@@ -102,12 +131,7 @@ function validation_fields() {
         alert("The form is invalid");
         return ;} // Root domain at least 2 chars
 
-    // Validate age
-   else if (age < 10 || age > 120) {
-        alert("The form is invalid");
-        return ;
-    }
-      // If all validations pass, return true to submit the form
 
+      // If all validations pass
         alert("The form is valid")   
 }

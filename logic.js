@@ -33,7 +33,7 @@ function solution_js_event_listeners() {
     });
 
     document.body.addEventListener('keydown', function(event) {
-        console.log(`The key '${event.key}' was pressed`);
+        alert(`The key '${event.key}' was pressed`);
     });
 }
 

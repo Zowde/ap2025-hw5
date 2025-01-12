@@ -49,7 +49,7 @@ function validation_fields() {
     }
 
     // Validate password
-   if (!passwordRegex.test(password)) {
+   if (!passwordRegex.test(password) || password.length < 8) {
         alert("The form is invalid");
         return;
     }

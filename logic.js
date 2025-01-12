@@ -38,76 +38,45 @@ function solution_js_event_listeners() {
 }
 
 function solution_js_unit_converter() {
-    // Get the input values
-    const inputValue = parseFloat(document.getElementById('convertion_input').value);
-    const convertFromUnit = document.getElementById('convert_from_unit').value;
-    const convertToUnit = document.getElementById('convert_to_unit').value;
-
-    // Conversion rates (in terms of cm)
+    // Get input values
+    const inputValue = parseFloat(document.getElementById("convertion_input").value);
+    const convertFromUnit = document.getElementById("convert_from_unit").value;
+    const convertToUnit = document.getElementById("convert_to_unit").value;
+  
+    // Conversion factors
     const conversionRates = {
-        cm: {
-            meter: 0.01,
-            inch: 0.393701,
-            foot: 0.0328084
-        },
-        meter: {
-            cm: 100,
-            inch: 39.3701,
-            foot: 3.28084
-        },
-        inch: {
-            cm: 2.54,
-            meter: 0.0254,
-            foot: 0.0833333
-        },
-        foot: {
-            cm: 30.48,
-            meter: 0.3048,
-            inch: 12
-        }
+      cm: {
+        meter: 0.01,
+        inch: 0.393701,
+        foot: 0.0328084
+      },
+      meter: {
+        cm: 100,
+        inch: 39.3701,
+        foot: 3.28084
+      },
+      inch: {
+        cm: 2.54,
+        meter: 0.0254,
+        foot: 0.0833333
+      },
+      foot: {
+        cm: 30.48,
+        meter: 0.3048,
+        inch: 12
+      }
     };
-
-    // If input value is NaN (not a valid number), we just exit
-    if (isNaN(inputValue)) {
-        alert("Please enter a valid number.");
-        return;
+  
+    // Convert the input value to the desired unit
+    if (convertFromUnit !== convertToUnit) {
+      const conversionRate = conversionRates[convertFromUnit][convertToUnit];
+      const outputValue = inputValue * conversionRate;
+      document.getElementById("convertion_output").value = outputValue.toFixed(4);
+    } else {
+      document.getElementById("convertion_output").value = inputValue;
     }
-
-    // Convert from the 'from' unit to 'cm' (common base)
-    let baseValueInCm = inputValue;
-
-    // Convert 'from' unit to cm
-    if (convertFromUnit !== 'cm') {
-        baseValueInCm *= conversionRates[convertFromUnit]['cm'];
-    }
-
-    // Convert from 'cm' to 'to' unit
-    let outputValue = baseValueInCm;
-
-    if (convertToUnit !== 'cm') {
-        outputValue *= conversionRates['cm'][convertToUnit];
-    }
-
-    // Display the result in the "Convert to" input field
-    document.getElementById('convertion_output').value = outputValue;
-}
-
-// Add the event listener on form submission
-// Add event listener using the listen function
-function listen() {
-       /*
-    document.getElementById("submit").addEventListener("click", function(event) {
-        // Prevent form submission until validation is done
-        event.preventDefault();
-
-        // Validate the form
-        if (validation_fields()) {
-            // If validation is successful, submit the form
-            document.getElementById("myform").submit();
-        }
-    });
-    */
-}
+  }
+  
 
 
 // Validation function for the form fields

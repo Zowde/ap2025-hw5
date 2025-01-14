@@ -15,10 +15,14 @@ div.button {
     text-align: center;
     vertical-align: middle;
 }
-
+.div-grid{
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+}
 div.div-grid {
     width: 300px;
 }
+
 table {
     width: 30%;
     border-collapse: collapse;

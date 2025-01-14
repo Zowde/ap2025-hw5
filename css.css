@@ -39,3 +39,10 @@ table {
 [id="blue_background"] p[blue]{
     background-color:#0000ff
 }
+[class="redcontent"]>p:first-child{
+    color:#ff0000
+}
+p[class = "text_after"]::after{
+    content:"Added this text";
+}
+

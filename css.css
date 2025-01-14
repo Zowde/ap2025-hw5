@@ -37,5 +37,5 @@ table {
     color: lime;
 }
 [id="blue_background"] p[blue]{
-    color:#0000ff;;
+    background-color:#0000ff
 }

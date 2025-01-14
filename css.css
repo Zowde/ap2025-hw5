@@ -31,5 +31,11 @@ table {
   td{
     text-align: center;
     border: 1px solid;
-
   }
+
+[id="lime_paragraph"]>[class="lime_paragraph"]>p {
+    color: lime;
+}
+[id="blue_background"] p {
+    color: #000ff0;;
+}

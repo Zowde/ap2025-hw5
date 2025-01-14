@@ -36,6 +36,6 @@ table {
 [id="lime_paragraph"]>[class="lime_paragraph"]>p {
     color: lime;
 }
-[id="blue_background"] p {
+[id="blue_background"] p[blue]{
     color: #000ff0;;
 }
